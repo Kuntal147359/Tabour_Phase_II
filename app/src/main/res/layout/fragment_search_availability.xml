@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="bottom"
+    android:nestedScrollingEnabled="true"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="@drawable/top_rounded_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="5dp"
+                    android:background="@color/spinner_back_color_grey"
+                    />
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:background="@android:color/transparent"
+                app:tabBackground="@android:color/transparent"
+                app:tabGravity="start"
+                app:tabIndicator="@drawable/shape_round_corner"
+                app:tabIndicatorColor="@color/colorAccent"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorGravity="bottom"
+                app:tabIndicatorHeight="@dimen/spacing_small"
+                app:tabMode="auto"
+                app:tabRippleColor="@android:color/transparent"
+                app:tabSelectedTextColor="@color/colorAccent"
+                app:tabTextAppearance="@style/TabitemStyle"
+                app:tabTextColor="@color/avail_now_sub_text_color"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="@string/guest_date_time"
+                    style="@style/TabitemStyle"/>
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/tab_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:text="@string/location" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/lyt_guest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <View
+                        android:id="@+id/vDivider1"
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/etBorder"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvSearchDateAndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/sofiapro_light"
+                        android:text="@string/home_date_and_time"
+                        android:textColor="@color/h_text_color"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/clGuestCount"
+                        app:layout_goneMarginTop="24dp" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/bSearchDateAndTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="top"
+                        app:constraint_referenced_ids="tvSearchDateAndTime" />
+
+                    <androidx.constraintlayout.widget.Barrier
+                        android:id="@+id/bBtnDone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:barrierDirection="bottom"
+                        app:constraint_referenced_ids="clDateTime" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clGuestCount"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/vDivider1">
+
+                        <View
+                            android:id="@+id/vDivider2"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@color/etBorder"
+                            app:layout_constraintEnd_toEndOf="@+id/llGuestsCount"
+                            app:layout_constraintStart_toStartOf="@+id/tvSearchGuests"
+                            app:layout_constraintTop_toBottomOf="@+id/llGuestsCount" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tvSearchGuests"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:fontFamily="@font/sofia_pro_medium"
+                            android:text="@string/home_guests"
+                            android:textColor="@color/select_date_time_guest"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            app:layout_constraintBottom_toBottomOf="@+id/llGuestsCount"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/llGuestsCount" />
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:id="@+id/llGuestsCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="24dp"
+                            android:gravity="center_vertical|end"
+                            android:backgroundTint="@color/etBorder"
+                            android:backgroundTintMode="src_atop"
+                            android:paddingVertical="10dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btnMinus"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:scaleType="fitCenter"
+                                android:layout_gravity="center_vertical"
+                                app:srcCompat="@drawable/minus_48" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvSearchGuestsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginHorizontal="5dp"
+                                android:paddingVertical="5dp"
+                                android:paddingHorizontal="25dp"
+                                android:background="@drawable/guest_number_bg"
+                                android:text="1"
+                                android:fontFamily="@font/sofia_pro_medium"
+                                android:textColor="@color/select_date_time_guest"
+                                android:textSize="16sp"
+                                android:textStyle="normal"/>
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/btnPlus"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical"
+                                android:scaleType="fitCenter"
+                                app:srcCompat="@drawable/plus_48" />
+
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clDateTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="ltr"
+                        app:layout_constraintBottom_toTopOf="@+id/bBtnDone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvSearchDateAndTime">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvDate"
+                            android:layout_width="0dp"
+                            android:layout_height="200dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="24dp"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="true"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/rvTime"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvTime"
+                            android:layout_width="0dp"
+                            android:layout_height="200dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="24dp"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="true"
+                            android:orientation="vertical"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintStart_toEndOf="@+id/rvDate"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <View
+                            android:id="@+id/view12"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="24dp"
+                            android:background="@drawable/fg_search_availability"
+                            android:elevation="24dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <View
+                            android:id="@+id/view11"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:layout_marginBottom="24dp"
+                            android:background="@drawable/date_time_selected_bg"
+                            android:elevation="24dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:gravity="center"
+                        android:text="@string/enter_location"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textColor="@color/select_date_time_guest"
+                        android:textSize="16sp"
+                        android:textStyle="normal"
+                        android:fontFamily="@font/sofia_pro_medium"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:background="@drawable/editext_background"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="@dimen/spacing_medium"
+                            android:layout_height="0dp" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/et_location"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="15dp"
+                                android:gravity="center_vertical"
+                                android:hint="@string/enter_location"
+                                android:textColorHint="@color/grey_40"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textSize="15sp"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/sofia_pro_medium">
+
+                                <requestFocus />
+
+                            </TextView>
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/loc_clear_txt"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginEnd="3dp"
+                                android:visibility="gone"
+                                android:layout_gravity="end|center_vertical"
+                                android:background="@drawable/ic_baseline_close_24"
+                                android:backgroundTint="@color/grey_90"/>
+
+                        </FrameLayout>
+
+                        <View
+                            android:layout_width="@dimen/spacing_medium"
+                            android:layout_height="0dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lyt_current_loc"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:layout_width="@dimen/spacing_medium"
+                            android:layout_height="0dp" />
+
+                        <LinearLayout
+                            android:layout_width="40dp"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:adjustViewBounds="true"
+                                android:scaleType="fitCenter"
+                                android:clickable="true"
+                                app:srcCompat="@drawable/ic_baseline_my_location_24"
+                                app:tint="@color/text_sub_heading" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:gravity="center"
+                            android:text="@string/current_location"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textColor="@color/text_sub_heading"
+                            android:textSize="16sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_medium"/>
+
+                        <View
+                            android:layout_width="@dimen/spacing_medium"
+                            android:layout_height="0dp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btnDone"
+                style="@style/PrimaryButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/home_done"
+                android:textColor="@color/white"
+                android:textSize="19sp"
+                android:fontFamily="@font/sofia_pro_medium"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+

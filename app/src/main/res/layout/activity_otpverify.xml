@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    tools:context=".activity.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        tools:context=".activity.LoginActivity">
+
+        <LinearLayout
+            android:id="@+id/logo_con"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="120dp"
+                android:src="@drawable/tabour_logo"
+                android:scaleType="fitCenter"
+                android:contentDescription="@string/app_name"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lyt_login_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/logo_con"
+            android:background="@drawable/login_page_curve"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/verification_code"
+                    android:textAlignment="gravity"
+                    android:textColor="@color/h_text_color"
+                    android:textDirection="locale"
+                    android:textSize="26sp"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/sofia_pro_medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/secondry_txt_otp_verify"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="15sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/verify_sub_head"
+                    android:fontFamily="@font/sofia_pro_regular"/>
+
+                <TextView
+                    android:id="@+id/tv_phnumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="+123456789"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="15sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/text_sub_heading"
+                    android:fontFamily="@font/sofia_pro_regular"
+                    android:textStyle="normal"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/enter_otp"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="15sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/sofia_pro_medium" />
+
+                <com.alimuzaffar.lib.pin.PinEntryEditText
+                    android:id="@+id/txt_pin_entry"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:digits="1234567890"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:textIsSelectable="false"
+                    android:textSize="18sp"
+                    app:pinAnimationType="fromBottom"
+                    app:pinBackgroundDrawable="@drawable/editext_background"
+                    app:pinBackgroundIsSquare="true"
+                    app:pinCharacterSpacing="4dp"
+                    app:pinTextBottomPadding="16dp"
+                    tools:ignore="SpUsage" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="2dp"
+                        android:paddingEnd="2dp"
+                        android:text="@string/resend_in"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/colorPrimary"
+                        android:fontFamily="@font/sofia_pro_medium"/>
+
+                    <TextView
+                        android:id="@+id/tv_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                        android:textColor="@color/resendtimer_color"
+                        android:fontFamily="@font/sofia_pro_medium"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_resend_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/resend_code"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="15sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/colorAccent"
+                    android:fontFamily="@font/sofia_pro_medium"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_otp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:gravity="start|center_vertical"
+                android:text=""
+                android:textAlignment="gravity"
+                android:textDirection="locale"
+                android:textSize="15sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/bg_secondary"
+                android:fontFamily="@font/sofiapro_light"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sendbutton"
+                android:layout_width="match_parent"
+                android:layout_marginTop="20dp"
+                android:layout_height="50dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:enabled="false"
+                android:text="@string/verify"
+                android:fontFamily="@font/sofia_pro_medium"
+                android:textSize="18sp"
+                android:background="@drawable/bg_coloraccent"
+                android:textAllCaps="false" />
+
+
+            <LinearLayout
+                android:id="@+id/lyt_go_back"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_goback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/go_back"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="16sp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/sofia_pro_medium"
+                    android:textStyle="normal"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorAccent"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_login_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/by_signing_in_you_agree_to"
+                android:textAlignment="gravity"
+                android:textDirection="locale"
+                android:textSize="15sp"
+                android:textColor="@color/trmscndtns_color"
+                android:fontFamily="@font/sofia_pro_regular"/>
+
+            <TextView
+                android:id="@+id/termsofuse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textAlignment="gravity"
+                android:textColor="@color/trmscndtns_color"
+                android:textDirection="locale"
+                android:textSize="15sp"
+                android:fontFamily="@font/sofia_pro_semibold"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

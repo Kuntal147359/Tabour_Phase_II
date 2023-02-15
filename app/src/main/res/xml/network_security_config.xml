@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+<!--        <domain includeSubdomains="true">103.252.168.24</domain>-->
+        <domain includeSubdomains="true">tabour.qa</domain>
+    </domain-config>
+</network-security-config>
+

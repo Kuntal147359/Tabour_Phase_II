@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_slot_time"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/slots_background"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="3dp"
+        android:text="02:00 PM"
+        android:fontFamily="@font/sofia_pro_medium"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="5dp"
+        android:textAlignment="gravity"
+        android:textColor="@color/secondary_textcolor"
+        android:textDirection="locale"
+        android:textSize="11sp"
+        android:textStyle="normal" />
+
+</LinearLayout>

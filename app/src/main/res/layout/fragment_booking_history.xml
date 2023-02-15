@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".fragments.BookingHistory">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/backdrop_view"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="@dimen/spacing_large">
+
+                <LinearLayout
+                    android:id="@+id/lyt_unread"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/spacing_small"
+                    android:layout_marginRight="@dimen/spacing_small"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/spacing_small"
+                    android:paddingRight="@dimen/spacing_small">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/spacing_mlarge"
+                        android:layout_marginRight="@dimen/spacing_mlarge"
+                        android:text="@string/my_bookings"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        android:fontFamily="@font/sofia_pro_semibold"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_back"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/back_arrow_round_border" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/homeContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:background="@drawable/bezier_curve"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="50dp"
+                            android:weightSum="100"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_upcmg_booking"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="50"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="5dp"
+                                android:layout_marginEnd="0dp"
+                                android:gravity="center"
+                                android:background="@drawable/booking_history_button_bg"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_upcmg_booking"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:gravity="center"
+                                    android:text="@string/upcoming_bookings"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="normal"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:fontFamily="@font/sofia_pro_medium"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_history_booking"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="50"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="5dp"
+                                android:layout_marginStart="0dp"
+                                android:gravity="center"
+                                android:background="@drawable/booking_history_grey_bg"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tv_history_booking"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:gravity="center"
+                                    android:text="@string/history"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textColor="@color/h_text_color"
+                                    android:textSize="15sp"
+                                    android:textStyle="normal"
+                                    android:fontFamily="@font/sofia_pro_medium"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <androidx.core.widget.NestedScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:layout_marginTop="20dp"
+                            android:scrollbars="none">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/booking_history_recy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:ignore="MissingConstraints"
+                                    tools:layout_editor_absoluteY="16dp" />
+
+                            </LinearLayout>
+
+
+                        </androidx.core.widget.NestedScrollView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/spacing_large"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

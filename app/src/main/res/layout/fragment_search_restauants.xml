@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/backdrop_view"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/spacing_large">
+
+            <LinearLayout
+                android:id="@+id/lyt_unread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/spacing_small"
+                android:paddingRight="@dimen/spacing_small">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/spacing_mlarge"
+                    android:layout_marginRight="@dimen/spacing_mlarge"
+                    android:text="@string/search"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="normal"
+                    android:fontFamily="@font/sofia_pro_semibold"/>
+
+
+            </LinearLayout>
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/lyt_back"-->
+<!--                android:layout_width="50dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_alignParentStart="true"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="vertical">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:contentDescription="@string/app_name"-->
+<!--                    android:scaleType="fitCenter"-->
+<!--                    android:src="@drawable/back_arrow_round_border" />-->
+
+<!--            </LinearLayout>-->
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/homeContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="0dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:background="@drawable/bezier_curve"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="80dp"
+                        android:layout_marginBottom="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="@string/search_results"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textColor="@color/faint_primary_color"
+                            android:textSize="13sp"
+                            android:textStyle="normal"
+                            android:textAllCaps="true"
+                            android:fontFamily="@font/sofia_pro_medium"/>
+
+                        <TextView
+                            android:id="@+id/txt_nearBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="10dp"
+                            android:gravity="center"
+                            android:text="@string/count_result_found"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textColor="@color/h_text_color"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/sofiapro_light"/>
+
+                    </LinearLayout>
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/search_restaurants_recy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:ignore="MissingConstraints"
+                                    tools:layout_editor_absoluteY="16dp" />
+
+                                <ProgressBar
+                                    android:id="@+id/eshtblsh_progressbar"
+                                    style="?android:attr/progressBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:indeterminate="true"
+                                    android:layout_gravity="center" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_search_availability"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:padding="5dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/background_skin"
+                android:backgroundTint="@color/white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageButton
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        android:background="@android:color/transparent"
+                        android:clickable="true"
+                        app:srcCompat="@drawable/search_icon_filled"
+                        app:tint="@color/colorAccent" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/tv_srchbykeyword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/search_restaurents"
+                    android:textColorHint="@color/grey_40"
+                    android:textColor="@color/h_text_color"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textSize="15sp"
+                    android:fontFamily="@font/sofiapro_light"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="5dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/guest_icon_sm"
+                        android:contentDescription="@string/app_name"
+                        app:tint="@color/h_text_color" />
+
+                    <TextView
+                        android:id="@+id/guest_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textColor="@color/h_text_color"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/sofiapro_light"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Linear layout as parent layout-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/alert_box_border">
+
+    <!-- Text view to show the text Select course-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/select_month"
+        android:textAlignment="gravity"
+        android:textColor="@color/h_text_color"
+        android:textDirection="locale"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/sofia_pro_semibold"
+        />
+
+    <!-- List view to insert list of items-->
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:id="@+id/months_list_view"
+        />
+
+</LinearLayout>

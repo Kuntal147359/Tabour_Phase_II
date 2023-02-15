@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="600dp"
+    android:gravity="bottom"
+    android:nestedScrollingEnabled="true"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"
+        android:background="@drawable/top_rounded_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="6dp"
+                    android:background="@color/spinner_back_color_grey"
+                    />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/txt_available_now"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:gravity="center"
+                    android:text="@string/edit_profile"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textColor="@color/text_sub_heading"
+                    android:textSize="17sp"
+                    android:textStyle="normal"
+                    android:textAllCaps="true"
+                    android:fontFamily="@font/sofia_pro_semibold"/>
+
+                <LinearLayout
+                    android:id="@+id/btn_available_view_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/btn_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/sofia_pro_medium"
+                        android:gravity="start|center_vertical"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:text="@string/close"
+                        android:textAlignment="gravity"
+                        android:textColor="@color/colorAccent"
+                        android:textDirection="locale"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        android:ellipsize="end"
+                        android:maxLines="1" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/spinner_back_color_grey"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/lyt_edit_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:visibility="visible"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:text="@string/name"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textColor="@color/confirmbooking_icon_color"
+                            android:textSize="15sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_regular"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center_vertical|end"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_username"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sofia_pro_regular"
+                                android:gravity="end|center_vertical"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:text=""
+                                android:textAlignment="gravity"
+                                android:textColor="@color/colorPrimary"
+                                android:textDirection="locale"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:ellipsize="end"
+                                android:maxLines="1" />
+
+                            <LinearLayout
+                                android:id="@+id/edt_username"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:visibility="visible"
+                                android:layout_marginStart="5dp"
+                                android:background="@drawable/background_circle_faint_grey"
+                                android:backgroundTint="@color/faint_sandybrown_bg"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/iv_back"
+                                tools:ignore="TouchTargetSizeCheck">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:focusable="true"
+                                    android:padding="0dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/edit"
+                                    android:tint="@color/colorAccent" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:text="@string/mobile_number"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textColor="@color/confirmbooking_icon_color"
+                            android:textSize="15sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_regular"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center_vertical|end"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_mobile_number"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sofia_pro_regular"
+                                android:gravity="end|center_vertical"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:text=""
+                                android:textAlignment="gravity"
+                                android:textColor="@color/colorPrimary"
+                                android:textDirection="locale"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:ellipsize="end"
+                                android:maxLines="1" />
+
+                            <LinearLayout
+                                android:id="@+id/edt_mobnum"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:visibility="visible"
+                                android:layout_marginStart="5dp"
+                                android:background="@drawable/background_circle_faint_grey"
+                                android:backgroundTint="@color/faint_sandybrown_bg"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/iv_back"
+                                tools:ignore="TouchTargetSizeCheck">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:focusable="true"
+                                    android:padding="0dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/edit"
+                                    android:tint="@color/colorAccent" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="10dp"
+                            android:gravity="center"
+                            android:text="@string/register_field_email"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textColor="@color/confirmbooking_icon_color"
+                            android:textSize="15sp"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_regular"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="center_vertical|end"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_email"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/sofia_pro_regular"
+                                android:gravity="end|center_vertical"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:text=""
+                                android:textAlignment="gravity"
+                                android:textColor="@color/colorPrimary"
+                                android:textDirection="locale"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:ellipsize="end"
+                                android:maxLines="1" />
+
+                            <LinearLayout
+                                android:id="@+id/edt_email"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:visibility="visible"
+                                android:layout_marginStart="5dp"
+                                android:background="@drawable/background_circle_faint_grey"
+                                android:backgroundTint="@color/faint_sandybrown_bg"
+                                android:clickable="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toBottomOf="@+id/iv_back"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/iv_back"
+                                tools:ignore="TouchTargetSizeCheck">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:focusable="true"
+                                    android:padding="0dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/edit"
+                                    android:tint="@color/colorAccent" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
+
+

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "438424276362",
+    "project_id": "tabour-e2624",
+    "storage_bucket": "tabour-e2624.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:438424276362:android:83df3a13977d0993e44c73",
+        "android_client_info": {
+          "package_name": "com.tabour.hospitality"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "438424276362-sk7bi7dvo50jbb53t0pvoea3d1stc6hk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQdfKWToL6kU0pqgLl-TC594HoHONymwg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "438424276362-sk7bi7dvo50jbb53t0pvoea3d1stc6hk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

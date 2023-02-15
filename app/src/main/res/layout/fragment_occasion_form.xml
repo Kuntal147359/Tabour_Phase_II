@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ReservationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/backdrop_view"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/spacing_large">
+
+            <LinearLayout
+                android:id="@+id/lyt_unread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/spacing_small"
+                android:paddingRight="@dimen/spacing_small">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/spacing_mlarge"
+                    android:layout_marginRight="@dimen/spacing_mlarge"
+                    android:text="@string/reservation"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="@font/sofia_pro_semibold"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_back"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back_arrow_round_border" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/homeContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bezier_curve"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="40dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:orientation="vertical">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_chooseDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/selected_date_time"
+                                android:textAlignment="gravity"
+                                android:textDirection="locale"
+                                android:textSize="15sp"
+                                android:textColor="@color/text_sub_heading"
+                                android:textStyle="normal"
+                                android:textAllCaps="true"
+                                android:fontFamily="@font/sofia_pro_medium" />
+
+                            <TextView
+                                android:id="@+id/tv_choice"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:gravity="center"
+                                android:text=""
+                                android:textAlignment="gravity"
+                                android:textDirection="locale"
+                                android:textSize="16sp"
+                                android:textColor="@color/h_text_color"
+                                android:textStyle="normal"
+                                android:maxLines="1"
+                                android:ellipsize="marquee"
+                                android:fontFamily="@font/sofia_pro_medium" />
+
+                        </LinearLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clDateTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="20dp"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="20dp"
+                            android:background="@drawable/bg_white_with_corners"
+                            android:layoutDirection="ltr">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_occasion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@+id/lyt_special_request"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="@string/occasion"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="15sp"
+                                    android:textStyle="normal"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+                                <EditText
+                                    android:id="@+id/edt_occasion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/editext_background"
+                                    android:hint="@string/enter_occasion"
+                                    android:padding="15dp"
+                                    android:textSize="15sp"
+                                    android:inputType="text"
+                                    android:textColor="@color/phnnum_txt_color"
+                                    android:fontFamily="@font/sofia_pro_regular"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_special_request"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lyt_occasion"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="start"
+                                    android:text="@string/special_request_optional"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="15sp"
+                                    android:textStyle="normal"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+                                <EditText
+                                    android:id="@+id/edt_specialRqst"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="150dp"
+                                    android:layout_marginTop="10dp"
+                                    android:gravity="top"
+                                    android:background="@drawable/editext_background"
+                                    android:hint="@string/comments"
+                                    android:padding="15dp"
+                                    android:textSize="15sp"
+                                    android:inputType="text|textMultiLine"
+                                    android:textColor="@color/phnnum_txt_color"
+                                    android:fontFamily="@font/sofia_pro_regular"/>
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnNext"
+                        style="@style/PrimaryButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginVertical="24dp"
+                        android:enabled="true"
+                        android:backgroundTint="@color/colorAccent"
+                        android:text="@string/submit"
+                        android:fontFamily="@font/sofia_pro_medium"
+                        android:textStyle="normal" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

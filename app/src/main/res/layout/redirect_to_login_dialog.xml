@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@drawable/alert_box_border">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_close"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:translationZ="2dp"
+        android:src="@drawable/closequeue"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/app_name"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layoutDirection="ltr">
+
+        <TextView
+            android:id="@+id/tv_leave_queue"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="start|center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/spacing_mlarge"
+            android:layout_marginRight="@dimen/spacing_mlarge"
+            android:text="@string/login_alert"
+            android:textAlignment="gravity"
+            android:textDirection="locale"
+            android:textSize="22sp"
+            android:textColor="@color/h_text_color"
+            android:textStyle="normal"
+            android:fontFamily="@font/sofia_pro_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tv_queue_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tv_queue_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/spacing_mlarge"
+            android:layout_marginRight="@dimen/spacing_mlarge"
+            android:text="@string/go_to_login"
+            android:textAlignment="gravity"
+            android:textDirection="locale"
+            android:textSize="18sp"
+            android:textColor="@color/text_sub_heading"
+            android:textStyle="normal"
+            android:fontFamily="@font/sofia_pro_medium"
+            app:layout_constraintTop_toBottomOf="@+id/tv_leave_queue"
+            app:layout_constraintBottom_toTopOf="@+id/lyt_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/lyt_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="100"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="@dimen/spacing_mlarge"
+            android:layout_marginRight="@dimen/spacing_mlarge"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_queue_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_yes"
+                style="@style/PrimaryButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="47"
+                android:enabled="true"
+                android:background="@drawable/restaurent_bg"
+                android:text="@string/yes"
+                android:fontFamily="@font/sofiapro_light"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/btn_no"
+                style="@style/PrimaryButton"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_weight="47"
+                android:enabled="true"
+                android:background="@drawable/cafes_bg"
+                android:text="@string/no"
+                android:textSize="18sp"
+                android:textColor="@color/secondary_textcolor"
+                android:fontFamily="@font/sofiapro_light"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

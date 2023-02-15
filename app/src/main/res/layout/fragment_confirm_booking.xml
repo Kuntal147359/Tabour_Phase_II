@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View"/>
+
+        <variable
+            name="bookingdata"
+            type="com.tabour.hospitality.viewmodels.EshtblshmntViewModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/backdrop_view"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:gravity="center_horizontal|bottom"
+                android:paddingBottom="@dimen/spacing_large">
+
+                <LinearLayout
+                    android:id="@+id/lyt_unread"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="@dimen/spacing_small"
+                    android:layout_marginRight="@dimen/spacing_small"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/spacing_small"
+                    android:paddingRight="@dimen/spacing_small">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/spacing_mlarge"
+                        android:layout_marginRight="@dimen/spacing_mlarge"
+                        android:text="@string/confirm"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textSize="20sp"
+                        android:textColor="@android:color/white"
+                        android:fontFamily="@font/sofia_pro_semibold"/>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyt_back"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/back_arrow_round_border" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/homeContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bezier_curve"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:orientation="vertical">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:scrollbars="none">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/clDateTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="20dp"
+                            android:paddingBottom="20dp"
+                            android:layoutDirection="ltr">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_restrodetails"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@+id/lyt_date_time"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:id="@+id/img_restarnt"
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/fokespoon"
+                                        android:contentDescription="@string/app_name"
+                                        />
+
+                                    <TextView
+                                        android:id="@+id/tv_restarnt"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:gravity="start|center_vertical"
+                                        android:text="@string/restaurabt_details"
+                                        android:textAlignment="gravity"
+                                        android:textDirection="locale"
+                                        android:textColor="@color/cnfrm_booking_head_color"
+                                        android:textSize="15sp"
+                                        android:textStyle="normal"
+                                        android:fontFamily="@font/sofia_pro_regular"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_restroname"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="start"
+                                    android:text="@{bookingdata.Companion.restro_name}"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="18sp"
+                                    android:textStyle="normal"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="18dp"
+                                        android:layout_height="18dp"
+                                        android:layout_marginTop="3dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/ic_location_icon_white"
+                                        android:contentDescription="@string/app_name"
+                                        app:tint="@color/text_sub_heading" />
+
+                                    <TextView
+                                        android:id="@+id/tv_restroaddrs"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="start"
+                                        android:text="@{bookingdata.Companion.restro_address}"
+                                        android:textAlignment="gravity"
+                                        android:textDirection="locale"
+                                        android:textSize="16sp"
+                                        android:textStyle="normal"
+                                        android:textColor="@color/text_sub_heading"
+                                        android:fontFamily="@font/sofia_pro_medium" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_date_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@+id/lyt_guest"
+                                app:layout_constraintTop_toBottomOf="@+id/lyt_restrodetails"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:id="@+id/lyt_restaurants"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/datetime"
+                                        android:contentDescription="@string/app_name"
+                                        />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:gravity="start|center_vertical"
+                                        android:text="@string/date_time"
+                                        android:textAlignment="gravity"
+                                        android:textDirection="locale"
+                                        android:textColor="@color/cnfrm_booking_head_color"
+                                        android:textSize="15sp"
+                                        android:textStyle="normal"
+                                        android:fontFamily="@font/sofia_pro_regular"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_date_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="start"
+                                    android:text="@{bookingdata.Companion.bookingdate_time}"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="17sp"
+                                    android:textStyle="normal"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_guest"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@+id/lyt_seatingtype"
+                                app:layout_constraintTop_toBottomOf="@+id/lyt_date_time"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/guest_icon"
+                                        android:contentDescription="@string/app_name"
+                                        app:tint="@color/confirmbooking_icon_color" />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:gravity="start|center_vertical"
+                                        android:text="@string/number_of_guest"
+                                        android:textAlignment="gravity"
+                                        android:textDirection="locale"
+                                        android:textColor="@color/cnfrm_booking_head_color"
+                                        android:textSize="15sp"
+                                        android:textStyle="normal"
+                                        android:fontFamily="@font/sofia_pro_regular"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_guest"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:paddingHorizontal="5dp"
+                                    android:gravity="start"
+                                    android:text="@{bookingdata.Companion.no_guest}"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="17sp"
+                                    android:textStyle="normal"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_seatingtype"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@+id/lyt_occasion"
+                                app:layout_constraintTop_toBottomOf="@+id/lyt_guest"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/seating_type"
+                                        android:contentDescription="@string/app_name"
+                                        />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:gravity="start|center_vertical"
+                                        android:text="@string/type_of_seating"
+                                        android:textAlignment="gravity"
+                                        android:textDirection="locale"
+                                        android:textColor="@color/cnfrm_booking_head_color"
+                                        android:textSize="15sp"
+                                        android:textStyle="normal"
+                                        android:fontFamily="@font/sofia_pro_regular"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_seatingtype"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="start"
+                                    android:text="@{bookingdata.Companion.dining_area}"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="17sp"
+                                    android:textStyle="normal"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_occasion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:orientation="vertical"
+                                android:visibility="@{bookingdata.Companion.occasion.isEmpty() ? View.GONE: View.VISIBLE}"
+                                app:layout_constraintBottom_toTopOf="@+id/lyt_spl_request"
+                                app:layout_constraintTop_toBottomOf="@+id/lyt_seatingtype"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/occasion"
+                                        android:contentDescription="@string/app_name"
+                                        />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:gravity="start|center_vertical"
+                                        android:text="@string/occasion"
+                                        android:textAlignment="gravity"
+                                        android:textDirection="locale"
+                                        android:textColor="@color/cnfrm_booking_head_color"
+                                        android:textSize="15sp"
+                                        android:textStyle="normal"
+                                        android:fontFamily="@font/sofia_pro_regular"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_occasion"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="start"
+                                    android:text="@{bookingdata.Companion.occasion}"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="17sp"
+                                    android:textStyle="normal"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_spl_request"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:visibility="@{bookingdata.Companion.special_request.isEmpty() ? View.GONE: View.VISIBLE}"
+                                android:orientation="vertical"
+                                app:layout_constraintBottom_toTopOf="@+id/lyt_trms_cndtn"
+                                app:layout_constraintTop_toBottomOf="@+id/lyt_occasion"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageView
+                                        android:layout_width="20dp"
+                                        android:layout_height="20dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/special_request"
+                                        android:contentDescription="@string/app_name"
+                                        />
+
+                                    <TextView
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:gravity="start|center_vertical"
+                                        android:text="@string/special_request"
+                                        android:textAlignment="gravity"
+                                        android:textDirection="locale"
+                                        android:textColor="@color/cnfrm_booking_head_color"
+                                        android:textSize="15sp"
+                                        android:textStyle="normal"
+                                        android:fontFamily="@font/sofia_pro_regular"/>
+
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tv_spl_request"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="start"
+                                    android:text="@{bookingdata.Companion.special_request}"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="17sp"
+                                    android:textStyle="normal"
+                                    android:ellipsize="end"
+                                    android:maxLines="1"
+                                    android:textColor="@color/colorPrimary"
+                                    android:fontFamily="@font/sofia_pro_medium" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_trms_cndtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:visibility="gone"
+                                android:layout_marginTop="10dp"
+                                android:orientation="horizontal"
+                                app:layout_constraintBottom_toTopOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/lyt_spl_request"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent">
+
+                                <CheckBox
+                                    android:id="@+id/trmsncndtns"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:scaleX="1.3"
+                                    android:scaleY="1.3"
+                                    android:buttonTint="@color/colorAccent" />
+
+                                <TextView
+                                    android:id="@+id/trms_cndtns"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:text="@string/agree_the_tabour_s_policies"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textSize="15sp"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                    android:textColor="@color/text_sub_heading_faint"
+                                    android:fontFamily="@font/sofia_pro_medium"/>
+
+                            </LinearLayout>
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/btnConfirmBooking"
+                            style="@style/PrimaryButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginVertical="24dp"
+                            android:enabled="true"
+                            android:backgroundTint="@color/colorAccent"
+                            android:text="@string/confirm_booking"
+                            android:textSize="18sp"
+                            android:fontFamily="@font/sofia_pro_medium"
+                            android:textStyle="normal" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

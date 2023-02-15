@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="60dp"
+    android:layout_height="65dp"
+    android:id="@+id/lyt_parent"
+    android:background="@color/lyt_explore_bg_color"
+    android:layout_marginHorizontal="8dp"
+    android:padding="0dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Mon"
+        android:textAlignment="gravity"
+        android:textColor="@color/h_text_color"
+        android:textDirection="locale"
+        android:textSize="12sp"
+        android:textStyle="normal"
+        android:fontFamily="@font/sofia_pro_medium" />
+
+    <TextView
+        android:id="@+id/txt_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="18"
+        android:textAlignment="gravity"
+        android:textColor="@color/h_text_color"
+        android:textDirection="locale"
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:fontFamily="@font/sofia_pro_regular" />
+
+</LinearLayout>

@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/backdrop_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/lyt_unread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/spacing_small"
+                android:paddingRight="@dimen/spacing_small">
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/spacing_mlarge"
+                    android:layout_marginRight="@dimen/spacing_mlarge"
+                    android:text="@string/hi_user"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="17sp"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="@font/sofia_pro_semibold"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/spacing_mlarge"
+                    android:layout_marginRight="@dimen/spacing_mlarge"
+                    android:text="@string/let_s_find_a_table_for_you"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="23sp"
+                    android:textColor="@color/text_sub_heading_home"
+                    android:fontFamily="@font/sofia_pro_medium"/>
+
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/bookingslist_recy"
+                    android:layout_width="match_parent"
+                    android:layout_height="142dp"
+                    android:visibility="gone"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintDimensionRatio="1.3:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ProgressBar
+                    android:id="@+id/upcomingeventslist_progressbar"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/dots_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="visible"
+                    app:dotsColor="@color/white"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSize="8dp"
+                    app:dotsSpacing="4dp"
+                    app:dotsWidthFactor="2.5"
+                    app:selectedDotColor="@color/white"
+                    app:progressMode="true"
+                    app:layout_constraintTop_toBottomOf="@+id/bookingslist_recy"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/homeContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/home_page_curve"
+                android:orientation="vertical">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="15dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:weightSum="100"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_restaurants"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="50"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="5dp"
+                                android:layout_marginEnd="10dp"
+                                android:gravity="center"
+                                android:background="@drawable/restaurent_bg"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/img_restarnt"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/restaurent_icon"
+                                    android:contentDescription="@string/app_name"
+                                    />
+
+                                <TextView
+                                    android:id="@+id/tv_restarnt"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:gravity="center"
+                                    android:text="@string/restaurents"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textColor="@color/white"
+                                    android:textSize="15sp"
+                                    android:textStyle="normal"
+                                    android:fontFamily="@font/sofia_pro_medium"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_cafe"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="50"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="5dp"
+                                android:layout_marginStart="10dp"
+                                android:gravity="center"
+                                android:background="@drawable/cafes_bg"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/img_cafe"
+                                    android:layout_width="25dp"
+                                    android:layout_height="25dp"
+                                    android:scaleType="fitCenter"
+                                    android:src="@drawable/cafe_icon"
+                                    android:contentDescription="@string/app_name"
+                                    app:tint="@color/secondary_textcolor" />
+
+                                <TextView
+                                    android:id="@+id/tv_cafe"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:gravity="center"
+                                    android:text="@string/cafes"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textColor="@color/secondary_textcolor"
+                                    android:textSize="15sp"
+                                    android:textStyle="normal"
+                                    android:fontFamily="@font/sofia_pro_medium"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/lyt_categories"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:paddingVertical="20dp"
+                            android:background="@color/lyt_categories_bg_color"
+                            android:layout_marginTop="30dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="10dp"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:gravity="center"
+                                android:text="@string/what_are_you_in_the_mood_for"
+                                android:textAlignment="gravity"
+                                android:textDirection="locale"
+                                android:textColor="@color/h_text_color"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:fontFamily="@font/sofia_pro_medium"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/categories_recy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:ignore="MissingConstraints"
+                                    tools:layout_editor_absoluteY="16dp" />
+
+                                <ProgressBar
+                                    android:id="@+id/categories_progressbar"
+                                    style="?android:attr/progressBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:indeterminate="true"
+                                    android:layout_gravity="center" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="0dp"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:paddingVertical="20dp"
+                            android:background="@color/lyt_explore_bg_color"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginBottom="10dp"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:gravity="center"
+                                android:text="@string/explore"
+                                android:textAlignment="gravity"
+                                android:textDirection="locale"
+                                android:textColor="@color/h_text_color"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                android:fontFamily="@font/sofia_pro_medium"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/allrestaurants_recy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:ignore="MissingConstraints"
+                                    tools:layout_editor_absoluteY="16dp" />
+
+                                <ProgressBar
+                                    android:id="@+id/explore_progressbar"
+                                    style="?android:attr/progressBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:indeterminate="true"
+                                    android:layout_gravity="center" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:background="@color/lyt_explore_bg_color"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txt_available_now"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:gravity="center"
+                                    android:text="@string/available_now"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textColor="@color/h_text_color"
+                                    android:textSize="16sp"
+                                    android:textStyle="normal"
+                                    android:fontFamily="@font/sofia_pro_medium"/>
+
+                                <LinearLayout
+                                    android:id="@+id/btn_available_view_more"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sofia_pro_medium"
+                                        android:gravity="start|center_vertical"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:text="@string/view_more"
+                                        android:textAlignment="gravity"
+                                        android:textColor="@color/text_sub_heading"
+                                        android:textDirection="locale"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal"
+                                        android:ellipsize="end"
+                                        android:maxLines="1" />
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/viewmore_icon"
+                                        android:contentDescription="@string/app_name" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/available_now_recy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:scrollbars="none"/>
+
+                                <ProgressBar
+                                    android:id="@+id/available_now_progressbar"
+                                    style="?android:attr/progressBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:indeterminate="true"
+                                    android:layout_gravity="center" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="20dp"
+                            android:paddingVertical="10dp"
+                            android:background="@color/lyt_explore_bg_color"
+                            android:layout_marginBottom="40dp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txt_nearBy"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:paddingStart="5dp"
+                                    android:paddingEnd="5dp"
+                                    android:gravity="center"
+                                    android:text="@string/restaurants_nearby"
+                                    android:textAlignment="gravity"
+                                    android:textDirection="locale"
+                                    android:textColor="@color/h_text_color"
+                                    android:textSize="16sp"
+                                    android:textStyle="normal"
+                                    android:fontFamily="@font/sofia_pro_medium"/>
+
+                                <LinearLayout
+                                    android:id="@+id/btn_nearby_view_more"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/sofia_pro_medium"
+                                        android:gravity="start|center_vertical"
+                                        android:paddingStart="5dp"
+                                        android:paddingEnd="5dp"
+                                        android:text="@string/view_more"
+                                        android:textAlignment="gravity"
+                                        android:textColor="@color/text_sub_heading"
+                                        android:textDirection="locale"
+                                        android:textSize="14sp"
+                                        android:textStyle="normal"
+                                        android:ellipsize="end"
+                                        android:maxLines="1" />
+
+                                    <ImageView
+                                        android:layout_width="16dp"
+                                        android:layout_height="16dp"
+                                        android:scaleType="fitCenter"
+                                        android:src="@drawable/viewmore_icon"
+                                        android:contentDescription="@string/app_name" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/nearby_restaurants_recy"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    tools:ignore="MissingConstraints"
+                                    tools:layout_editor_absoluteY="16dp" />
+
+                                <ProgressBar
+                                    android:id="@+id/nearby_progressbar"
+                                    style="?android:attr/progressBarStyleSmall"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:indeterminate="true"
+                                    android:layout_gravity="center" />
+
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lyt_search_availability"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:weightSum="100"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingHorizontal="5dp"
+                android:gravity="center_vertical"
+                android:background="@drawable/background_skin"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="70"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="5dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/guest_icon_sm"
+                            android:contentDescription="@string/app_name"
+                            app:tint="@color/h_text_color" />
+
+                        <TextView
+                            android:id="@+id/guest_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:paddingStart="5dp"
+                            android:paddingEnd="5dp"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textColor="@color/h_text_color"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/sofiapro_light"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingHorizontal="2dp"
+                        android:gravity="center"
+                        android:text="•"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textColor="@color/text_sub_heading"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:fontFamily="@font/sofia_pro_semibold"/>
+
+                    <TextView
+                        android:id="@+id/booking_time"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:gravity="center"
+                        android:text=""
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textColor="@color/h_text_color"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:fontFamily="@font/sofiapro_light"/>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:background="@color/sub_h_text_color"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="30"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:gravity="center_vertical|start"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/location_sm"
+                        android:contentDescription="@string/app_name"
+                        app:tint="@color/h_text_color" />
+
+                    <TextView
+                        android:id="@+id/txt_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp"
+                        android:gravity="center"
+                        android:text="---"
+                        android:textAlignment="gravity"
+                        android:textDirection="locale"
+                        android:textColor="@color/h_text_color"
+                        android:textSize="15sp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/sofiapro_light"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+<!--            <FrameLayout-->
+<!--                android:id="@+id/bottom_sheet"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:background="@android:color/white"-->
+<!--                app:behavior_fitToContents="false"-->
+<!--                app:behavior_hideable="false"-->
+<!--                app:behavior_peekHeight="0dp"-->
+<!--                app:behavior_skipCollapsed="true"-->
+<!--                app:layout_behavior="@string/bottom_sheet_behavior">-->
+
+<!--                <include-->
+<!--                    android:id="@+id/bottom_sheet_behavior_id"-->
+<!--                    layout="@layout/fragment_search_availability"/>-->
+
+<!--            </FrameLayout>-->
+
+            <View
+                android:layout_width="@dimen/spacing_large"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    // Primary colors
+    <color name="colorPrimary">#01222E</color>
+    <color name="colorPrimaryDark">#013a4e</color>
+    <color name="sidenav_selected_bg">#01232f</color>
+    <color name="sidenav_selected_txtcolor">#d4b565</color>
+    <color name="colorAccent">#e9c46a</color>
+    <color name="h_text_color">#01222E</color>
+    <color name="text_sub_heading">#40798C</color>
+    <color name="text_sub_heading_faint">#78a0ae</color>
+    <color name="text_sub_heading_home">#ccd3d6</color>
+    <color name="view_more_color">#3f778a</color>
+    <color name="guest_border_color">#c2d4da</color>
+    <color name="sub_h_text_color">#2b2b2b</color>
+    <color name="secondary_textcolor">#40798c</color>
+    <color name="faint_primary_color">#40788b</color>
+    <color name="colorBlack">#242424</color>
+    <color name="sandybrown">#f4a261</color>
+    <color name="resendtimer_color">#E76F51</color>
+    <color name="cuisine_bg">#fefaf6</color>
+    <color name="cuisine_bg_border">#fadac0</color>
+    <color name="faint_sandybrown_bg">#fef8f3</color>
+    <color name="home_bg_color">#f9f6ef</color>
+<!--    <color name="home_bg_secondary">#fdfdfd</color>-->
+    <color name="home_bg_secondary">#fafafa</color>
+    <color name="faintsandybrown">#f1deb1</color>
+    <color name="menu_cat_background_color">#faf7f0</color>
+    <color name="whitesmoke">#f5f5f5</color>
+    <color name="colorPrimaryHue">#9001222e</color>
+    <color name="confirmbookingtxtcolor">#88979d</color>
+    <color name="confirmbooking_icon_color">#7f9096</color>
+    <color name="phnnum_txt_color">#262F55</color>
+    <color name="edt_hint_color">#ccdbe0</color>
+    <color name="verify_sub_head">#7ca3b0</color>
+    <color name="select_date_time_guest">#09182f</color>
+    <color name="date_time_selected_background_color">#faf7f0</color>
+    <color name="save_background_tint">#fcf8ef</color>
+    <color name="save_icon_tint">#eac875</color>
+    <color name="res_slider_dots_color">#737475</color>
+    <color name="resdtls_tab_color">#4d646d</color>
+    <color name="resdtls_descriptn_txt_color">#809096</color>
+    <color name="res_dtls_parking_color">#8e9da2</color>
+    <color name="res_dtls_menu_dscrptn_color">#7f9096</color>
+    <color name="cnfrm_booking_head_color">#7f9096</color>
+    <color name="view_booking_bg_color">#f4f1ea</color>
+    <color name="trmscndtns_color">#b3bdc0</color>
+    <color name="notification_time">#99a6ab</color>
+    <color name="notification_row_divider_line">#b8cdd4</color>
+
+    // Profile color
+    <color name="profile_phn_num_color">#80959d</color>
+    <color name="profile_dotted_line_color">#627a83</color>
+    <color name="profile_top_line">#f2f2f2</color>
+
+    // Transparent
+    <color name="transparent">#00000000</color>
+    <color name="trans_faint_grey">#CC666666</color>
+    <color name="transBlack70">#40000000</color>
+<!--    <color name="colorSaveHue">#80666666</color>-->
+    <color name="colorSaveHue">#80aba296</color>
+<!--    <color name="colorSaveHue">#80e9c46a</color>-->
+<!--    <color name="transBlack70">#80000000</color>-->
+
+    // Grey colors
+    <color name="bg_grey">#274d5a</color>
+    <color name="bg_secondary">#215263</color>
+<!--    <color name="hamburger_icon_bg">#284e5b</color>-->
+    <color name="hamburger_icon_bg">#275363</color>
+    <color name="border_grey">#ebebeb</color>
+    <color name="home_background">#FAFAFA</color>
+    <color name="my_booking_secondary">#f5f7f8</color>
+    <color name="gray">#ffacabab</color>
+    <color name="full_background_grey">#F9F6FF</color>
+    <color name="bold_letter_grey">#4E4E4E</color>
+    <color name="bottomsheet_heading_divider_line">#e5e8e9</color>
+    <color name="spinner_back_color_grey">#E9E9E9</color>
+    <color name="btn_search_background_grey">#EEEEEF</color>
+    <color name="slots_bg">#f5f8f9</color>
+    <color name="parking_bg">#ebf1f3</color>
+    <color name="color_border_choose_time">#c0d3d9</color>
+    <color name="avail_now_sub_text_color">#99a6ab</color>
+    <color name="next_avail_slots_color">#7f9096</color>
+    <color name="grey_details">#98a5aa</color>
+    <color name="dotted_border">#ccdbe0</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+
+    // Normal colors
+    <color name="otpBorderTrans">#bfd9dfe8</color>
+    <color name="etTextColorHint_2">#c3ccd8</color>
+    <color name="etBorder">#e6e9ea</color>
+    <color name="chipFillColor">#0dffffff</color>
+    <color name="chipStrokeColor">#4dffffff</color>
+    <color name="secondary">#fd321b</color>
+    <color name="greenTrans">#0d0caa05</color>
+    <color name="brownTrans">#0de9c46a</color>
+    <color name="dateTimeSelectedBorder">#4d0caa05</color>
+    <color name="dateTimeSelectedBorderbrown">#4de9c46a</color>
+    <color name="lyt_categories_bg_color">#f2efe8</color>
+    <color name="lyt_explore_bg_color">#f8f8f8</color>
+    <color name="booking_history_bg_color">#f4f4f4</color>
+
+</resources>

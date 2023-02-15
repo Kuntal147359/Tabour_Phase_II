@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ReservationFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/backdrop_view"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:gravity="center_horizontal|bottom"
+            android:paddingBottom="@dimen/spacing_large">
+
+            <LinearLayout
+                android:id="@+id/lyt_unread"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/spacing_small"
+                android:layout_marginRight="@dimen/spacing_small"
+                android:clickable="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/spacing_small"
+                android:paddingRight="@dimen/spacing_small">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_marginLeft="@dimen/spacing_mlarge"
+                    android:layout_marginRight="@dimen/spacing_mlarge"
+                    android:text="@string/reservation"
+                    android:textAlignment="gravity"
+                    android:textDirection="locale"
+                    android:textSize="20sp"
+                    android:textColor="@android:color/white"
+                    android:fontFamily="@font/sofia_pro_semibold"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                            android:id="@+id/lyt_back"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginStart="10dp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/app_name"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/back_arrow_round_border" />
+
+                        </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/homeContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="0dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:background="@drawable/bezier_curve"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/lyt_chooseMonth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="30dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="0dp"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/select_month_bg"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_chooseMonth"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/choose_date"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textSize="16sp"
+                            android:textColor="@color/text_sub_heading"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_medium"
+                            />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_baseline_arrow_drop_down_filled_48"
+                            android:scaleType="fitCenter"
+                            android:contentDescription="@string/app_name"/>
+
+                    </LinearLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clDateTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/border_choose_time"
+                        android:layoutDirection="ltr">
+
+                        <TextView
+                            android:id="@+id/tv_chooseDate"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/spacing_mlarge"
+                            android:layout_marginRight="@dimen/spacing_mlarge"
+                            android:text="@string/choose_date"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textSize="18sp"
+                            android:textColor="@color/h_text_color"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintBottom_toTopOf="@+id/rvChooseDate"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvChooseDate"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="0dp"
+                            android:orientation="horizontal"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="true"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_chooseDate" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clchoosTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/border_choose_time"
+                        android:layoutDirection="ltr">
+
+                        <TextView
+                            android:id="@+id/tv_chooseTime"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/spacing_mlarge"
+                            android:layout_marginRight="@dimen/spacing_mlarge"
+                            android:text="@string/choose_time"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textSize="18sp"
+                            android:textColor="@color/h_text_color"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintBottom_toTopOf="@+id/lyt_ChooseTime"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <RelativeLayout
+                            android:id="@+id/lyt_ChooseTime"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_chooseTime">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvChooseTime"
+                                android:layout_width="match_parent"
+                                android:layout_height="80dp"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="0dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginBottom="0dp"
+                                android:orientation="horizontal"
+                                android:clipToPadding="false"
+                                android:nestedScrollingEnabled="true" />
+
+                            <ProgressBar
+                                android:id="@+id/tmslt_progressbar"
+                                style="?android:attr/progressBarStyleSmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:indeterminate="true"
+                                android:layout_gravity="center" />
+
+                            <TextView
+                                android:id="@+id/tv_no_slots_available"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="3dp"
+                                android:layout_centerInParent="true"
+                                android:visibility="gone"
+                                android:fontFamily="@font/sofia_pro_medium"
+                                android:gravity="center_horizontal"
+                                android:paddingStart="5dp"
+                                android:paddingEnd="5dp"
+                                android:text="@string/no_slots_available"
+                                android:textAlignment="gravity"
+                                android:textColor="@color/next_avail_slots_color"
+                                android:textDirection="locale"
+                                android:textSize="15sp"
+                                android:textStyle="normal"
+                                android:ellipsize="end"
+                                android:maxLines="1" />
+
+
+                        </RelativeLayout>
+
+                        <!--                    <View-->
+                        <!--                        android:id="@+id/view22"-->
+                        <!--                        android:layout_width="0dp"-->
+                        <!--                        android:layout_height="0dp"-->
+                        <!--                        android:layout_marginStart="0dp"-->
+                        <!--                        android:layout_marginTop="0dp"-->
+                        <!--                        android:layout_marginEnd="0dp"-->
+                        <!--                        android:layout_marginBottom="0dp"-->
+                        <!--                        android:background="@drawable/choosedate_gradient"-->
+                        <!--                        android:elevation="24dp"-->
+                        <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+                        <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                        <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                        <!--                        app:layout_constraintTop_toTopOf="parent"-->
+                        <!--                        app:layout_constraintVertical_bias="0.25" />-->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/clchoosSeating"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/border_choose_time"
+                        android:layoutDirection="ltr">
+
+                        <TextView
+                            android:id="@+id/tv_chooseSeating"
+                            android:layout_width="0dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/spacing_mlarge"
+                            android:layout_marginRight="@dimen/spacing_mlarge"
+                            android:text="@string/choose_seating"
+                            android:textAlignment="gravity"
+                            android:textDirection="locale"
+                            android:textSize="18sp"
+                            android:textColor="@color/h_text_color"
+                            android:textStyle="normal"
+                            android:fontFamily="@font/sofia_pro_medium"
+                            app:layout_constraintBottom_toTopOf="@+id/rvChooseSeating"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"/>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvChooseSeating"
+                            android:layout_width="0dp"
+                            android:layout_height="80dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginBottom="0dp"
+                            android:orientation="horizontal"
+                            android:clipToPadding="false"
+                            android:nestedScrollingEnabled="true"
+                            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintVertical_bias="0.5"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/tv_chooseSeating" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/btnNext"
+                        style="@style/PrimaryButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginEnd="24dp"
+                        android:layout_marginBottom="24dp"
+                        android:enabled="false"
+                        android:background="@color/colorAccent"
+                        android:text="@string/btn_next"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/sofia_pro_medium"
+                        android:textStyle="normal" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"/>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
